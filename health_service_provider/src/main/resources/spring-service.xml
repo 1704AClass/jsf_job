@@ -12,7 +12,7 @@
     
 	<dubbo:application name="health_service_provider"/>  
 	<dubbo:registry address="zookeeper://123.57.66.47:2181"/>
-    <dubbo:annotation package="com.pinyougou.cart.service.impl"/>  
+    <dubbo:annotation package="com.bwie.service"/>  
    
    
 </beans>
