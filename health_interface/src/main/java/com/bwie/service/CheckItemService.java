@@ -3,20 +3,20 @@ package com.bwie.service;
 import java.util.List;
 
 import com.bwie.entity.PageResult;
-import com.bwie.pojo.CheckItem;
+import com.bwie.pojo.TCheckitem;
 
 public interface CheckItemService {
 
-	List<CheckItem> checkItemList();
+	List<TCheckitem> checkItemList();
 
 	PageResult findPage(Integer currentPage, Integer pageSize, String queryString);
 
-	void add(CheckItem checkitem);
+	void add(TCheckitem checkitem);
 
 	void delete(Integer id);
 
-	void edit(CheckItem checkitem);
+	void edit(TCheckitem checkitem);
 
-	CheckItem findById(Integer id);
+	TCheckitem findById(Integer id);
 
 }

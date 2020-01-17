@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.mapper.TUserRoleMapper" >
-  <resultMap id="BaseResultMap" type="com.health.pojo.TUserRoleKey" >
+<mapper namespace="com.bwie.mapper.TUserRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.bwie.pojo.TUserRoleKey" >
     <id column="user_id" property="userId" jdbcType="INTEGER" />
     <id column="role_id" property="roleId" jdbcType="INTEGER" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     user_id, role_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.health.pojo.TUserRoleExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bwie.pojo.TUserRoleExample" >
     select
     <if test="distinct" >
       distinct
@@ -80,22 +80,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.health.pojo.TUserRoleKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.bwie.pojo.TUserRoleKey" >
     delete from t_user_role
     where user_id = #{userId,jdbcType=INTEGER}
       and role_id = #{roleId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.health.pojo.TUserRoleExample" >
+  <delete id="deleteByExample" parameterType="com.bwie.pojo.TUserRoleExample" >
     delete from t_user_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.health.pojo.TUserRoleKey" >
+  <insert id="insert" parameterType="com.bwie.pojo.TUserRoleKey" >
     insert into t_user_role (user_id, role_id)
     values (#{userId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.health.pojo.TUserRoleKey" >
+  <insert id="insertSelective" parameterType="com.bwie.pojo.TUserRoleKey" >
     insert into t_user_role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -114,7 +114,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.health.pojo.TUserRoleExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.bwie.pojo.TUserRoleExample" resultType="java.lang.Integer" >
     select count(*) from t_user_role
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

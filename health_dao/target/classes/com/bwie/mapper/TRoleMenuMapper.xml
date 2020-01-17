@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.mapper.TRoleMenuMapper" >
-  <resultMap id="BaseResultMap" type="com.health.pojo.TRoleMenuKey" >
+<mapper namespace="com.bwie.mapper.TRoleMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.bwie.pojo.TRoleMenuKey" >
     <id column="role_id" property="roleId" jdbcType="INTEGER" />
     <id column="menu_id" property="menuId" jdbcType="INTEGER" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     role_id, menu_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.health.pojo.TRoleMenuExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bwie.pojo.TRoleMenuExample" >
     select
     <if test="distinct" >
       distinct
@@ -80,22 +80,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.health.pojo.TRoleMenuKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.bwie.pojo.TRoleMenuKey" >
     delete from t_role_menu
     where role_id = #{roleId,jdbcType=INTEGER}
       and menu_id = #{menuId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.health.pojo.TRoleMenuExample" >
+  <delete id="deleteByExample" parameterType="com.bwie.pojo.TRoleMenuExample" >
     delete from t_role_menu
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.health.pojo.TRoleMenuKey" >
+  <insert id="insert" parameterType="com.bwie.pojo.TRoleMenuKey" >
     insert into t_role_menu (role_id, menu_id)
     values (#{roleId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.health.pojo.TRoleMenuKey" >
+  <insert id="insertSelective" parameterType="com.bwie.pojo.TRoleMenuKey" >
     insert into t_role_menu
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="roleId != null" >
@@ -114,7 +114,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.health.pojo.TRoleMenuExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.bwie.pojo.TRoleMenuExample" resultType="java.lang.Integer" >
     select count(*) from t_role_menu
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

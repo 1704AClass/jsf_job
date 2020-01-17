@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.mapper.TSetmealCheckgroupMapper" >
-  <resultMap id="BaseResultMap" type="com.health.pojo.TSetmealCheckgroupKey" >
+<mapper namespace="com.bwie.mapper.TSetmealCheckgroupMapper" >
+  <resultMap id="BaseResultMap" type="com.bwie.pojo.TSetmealCheckgroupKey" >
     <id column="setmeal_id" property="setmealId" jdbcType="INTEGER" />
     <id column="checkgroup_id" property="checkgroupId" jdbcType="INTEGER" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     setmeal_id, checkgroup_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.health.pojo.TSetmealCheckgroupExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bwie.pojo.TSetmealCheckgroupExample" >
     select
     <if test="distinct" >
       distinct
@@ -80,22 +80,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.health.pojo.TSetmealCheckgroupKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.bwie.pojo.TSetmealCheckgroupKey" >
     delete from t_setmeal_checkgroup
     where setmeal_id = #{setmealId,jdbcType=INTEGER}
       and checkgroup_id = #{checkgroupId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.health.pojo.TSetmealCheckgroupExample" >
+  <delete id="deleteByExample" parameterType="com.bwie.pojo.TSetmealCheckgroupExample" >
     delete from t_setmeal_checkgroup
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.health.pojo.TSetmealCheckgroupKey" >
+  <insert id="insert" parameterType="com.bwie.pojo.TSetmealCheckgroupKey" >
     insert into t_setmeal_checkgroup (setmeal_id, checkgroup_id)
     values (#{setmealId,jdbcType=INTEGER}, #{checkgroupId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.health.pojo.TSetmealCheckgroupKey" >
+  <insert id="insertSelective" parameterType="com.bwie.pojo.TSetmealCheckgroupKey" >
     insert into t_setmeal_checkgroup
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="setmealId != null" >
@@ -114,7 +114,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.health.pojo.TSetmealCheckgroupExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.bwie.pojo.TSetmealCheckgroupExample" resultType="java.lang.Integer" >
     select count(*) from t_setmeal_checkgroup
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

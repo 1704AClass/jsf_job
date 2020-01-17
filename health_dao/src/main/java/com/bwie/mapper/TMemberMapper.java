@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TMember;
-import com.health.pojo.TMemberExample;
+import com.bwie.pojo.TMember;
+import com.bwie.pojo.TMemberExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

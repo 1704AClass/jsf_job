@@ -10,7 +10,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.bwie.entity.PageResult;
 import com.bwie.entity.QueryPageBean;
 import com.bwie.entity.Result;
-import com.bwie.pojo.CheckGroup;
+import com.bwie.pojo.TCheckgroup;
 import com.bwie.service.CheckgroupService;
 
 
@@ -29,7 +29,7 @@ public class CheckgroupController {
 	
 	//新增
 	@RequestMapping("/add")
-	public Result add(@RequestBody CheckGroup checkgroup,Integer[] checkitemIds){
+	public Result add(@RequestBody TCheckgroup checkgroup,Integer[] checkitemIds){
 		try {
 			checkgroupService.add(checkgroup, checkitemIds);
 			return new Result(true, "ok");
@@ -50,7 +50,7 @@ public class CheckgroupController {
 	//根据id查询
 	@RequestMapping("/findById")
 	public Result findById(Integer id){
-		CheckGroup checkgroup = checkgroupService.findById(id);
+		TCheckgroup checkgroup = checkgroupService.findById(id);
 		if(checkgroup!=null){
 			return new Result(true, "", checkgroup);
 		}else{
@@ -73,7 +73,7 @@ public class CheckgroupController {
 	
 	//编辑
 	@RequestMapping("/edit")
-	public Result edit(@RequestBody CheckGroup checkgroup,Integer[] checkitemIds){
+	public Result edit(@RequestBody TCheckgroup checkgroup,Integer[] checkitemIds){
 		try {
 			checkgroupService.edit(checkgroup, checkitemIds);
 			return new Result(true, "success");

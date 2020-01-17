@@ -33,5 +33,35 @@
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/repository-dobor/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="mybatis-3.4.5.jar"/>
+			<attribute name="maven.groupId" value="org.mybatis"/>
+			<attribute name="maven.artifactId" value="mybatis"/>
+			<attribute name="maven.version" value="3.4.5"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/repository-dobor/com/alibaba/dubbo/2.6.0/dubbo-2.6.0.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="dubbo-2.6.0.jar"/>
+			<attribute name="maven.groupId" value="com.alibaba"/>
+			<attribute name="maven.artifactId" value="dubbo"/>
+			<attribute name="maven.version" value="2.6.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/repository-dobor/com/github/pagehelper/pagehelper/4.1.4/pagehelper-4.1.4.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="pagehelper-4.1.4.jar"/>
+			<attribute name="maven.groupId" value="com.github.pagehelper"/>
+			<attribute name="maven.artifactId" value="pagehelper"/>
+			<attribute name="maven.version" value="4.1.4"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

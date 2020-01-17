@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TCheckgroup;
-import com.health.pojo.TCheckgroupExample;
+import com.bwie.pojo.TCheckgroup;
+import com.bwie.pojo.TCheckgroupExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +27,6 @@ public interface TCheckgroupMapper {
     int updateByPrimaryKeySelective(TCheckgroup record);
 
     int updateByPrimaryKey(TCheckgroup record);
+
+	List<Integer> findCheckItemIdsByCheckGroup(Integer id);
 }

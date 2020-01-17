@@ -3,20 +3,20 @@ package com.bwie.service;
 import java.util.List;
 
 import com.bwie.entity.PageResult;
-import com.bwie.pojo.CheckGroup;
+import com.bwie.pojo.TCheckgroup;
 
 public interface CheckgroupService {
 
 	Object findAll();
 
-	void add(CheckGroup checkgroup, Integer[] checkitemIds);
+	void add(TCheckgroup checkgroup, Integer[] checkitemIds);
 
 	PageResult pageQuery(Integer currentPage, Integer pageSize, String queryString);
 
-	CheckGroup findById(Integer id);
+	TCheckgroup findById(Integer id);
 
 	List<Integer> findCheckItemIdsByCheckGroup(Integer id);
 
-	void edit(CheckGroup checkgroup, Integer[] checkitemIds);
+	void edit(TCheckgroup checkgroup, Integer[] checkitemIds);
 
 }

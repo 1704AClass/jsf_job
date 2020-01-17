@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TUser;
-import com.health.pojo.TUserExample;
+import com.bwie.pojo.TUser;
+import com.bwie.pojo.TUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

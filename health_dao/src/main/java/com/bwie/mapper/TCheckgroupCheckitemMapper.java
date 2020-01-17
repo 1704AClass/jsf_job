@@ -2,7 +2,11 @@ package com.bwie.mapper;
 
 
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
+
+import com.bwie.pojo.TCheckgroupCheckitemExample;
+import com.bwie.pojo.TCheckgroupCheckitemKey;
 
 public interface TCheckgroupCheckitemMapper {
     int countByExample(TCheckgroupCheckitemExample example);

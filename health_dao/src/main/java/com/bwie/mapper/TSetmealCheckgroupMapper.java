@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TSetmealCheckgroupExample;
-import com.health.pojo.TSetmealCheckgroupKey;
+import com.bwie.pojo.TSetmealCheckgroupExample;
+import com.bwie.pojo.TSetmealCheckgroupKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

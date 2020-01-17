@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TMenu;
-import com.health.pojo.TMenuExample;
+import com.bwie.pojo.TMenu;
+import com.bwie.pojo.TMenuExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

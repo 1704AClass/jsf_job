@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TOrder;
-import com.health.pojo.TOrderExample;
+import com.bwie.pojo.TOrder;
+import com.bwie.pojo.TOrderExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

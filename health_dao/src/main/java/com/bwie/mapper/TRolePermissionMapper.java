@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TRolePermissionExample;
-import com.health.pojo.TRolePermissionKey;
+import com.bwie.pojo.TRolePermissionExample;
+import com.bwie.pojo.TRolePermissionKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

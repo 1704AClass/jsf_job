@@ -10,7 +10,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.bwie.entity.PageResult;
 import com.bwie.entity.QueryPageBean;
 import com.bwie.entity.Result;
-import com.bwie.pojo.CheckItem;
+import com.bwie.pojo.TCheckitem;
 import com.bwie.service.CheckItemService;
 
 
@@ -22,18 +22,19 @@ public class CheckItemController {
 	CheckItemService checkItemService;
 	
 	@RequestMapping("/checkItemList")
-	public List<CheckItem> checkItemList(){
+	public List<TCheckitem> checkItemList(){
 		return checkItemService.checkItemList();
 	}
 	
 	@RequestMapping("/findPage")
 	public PageResult findPage(@RequestBody QueryPageBean queryPageBean){
+		System.out.println(queryPageBean);
 		PageResult pageResult = checkItemService.findPage(queryPageBean.getCurrentPage(), queryPageBean.getPageSize(), queryPageBean.getQueryString());
 		return pageResult;
 	}
 	
 	@RequestMapping("/add")
-	public Result add(@RequestBody CheckItem checkitem){
+	public Result add(@RequestBody TCheckitem checkitem){
 		try {
 			checkItemService.add(checkitem);
 			return new Result(true, "");
@@ -59,7 +60,7 @@ public class CheckItemController {
 	}
 	
 	@RequestMapping("/edit")
-	public Result edit(@RequestBody CheckItem checkitem){
+	public Result edit(@RequestBody TCheckitem checkitem){
 		try {
 			checkItemService.edit(checkitem);
 			return new Result(true, "编辑成功");
@@ -74,7 +75,7 @@ public class CheckItemController {
 	@RequestMapping("/findById")
 	public Result findById(Integer id){
 		try {
-			CheckItem checkitem = checkItemService.findById(id);
+			TCheckitem checkitem = checkItemService.findById(id);
 			return new Result(true, "成功", checkitem);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

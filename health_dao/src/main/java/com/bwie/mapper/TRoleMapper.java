@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TRole;
-import com.health.pojo.TRoleExample;
+import com.bwie.pojo.TRole;
+import com.bwie.pojo.TRoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

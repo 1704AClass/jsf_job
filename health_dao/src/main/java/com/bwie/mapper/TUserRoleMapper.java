@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TUserRoleExample;
-import com.health.pojo.TUserRoleKey;
+import com.bwie.pojo.TUserRoleExample;
+import com.bwie.pojo.TUserRoleKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

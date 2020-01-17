@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.health.mapper.TSetmealMapper" >
-  <resultMap id="BaseResultMap" type="com.health.pojo.TSetmeal" >
+<mapper namespace="com.bwie.mapper.TSetmealMapper" >
+  <resultMap id="BaseResultMap" type="com.bwie.pojo.TSetmeal" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="code" property="code" jdbcType="VARCHAR" />
@@ -74,7 +74,7 @@
   <sql id="Base_Column_List" >
     id, name, code, helpCode, sex, age, price, remark, attention, img
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.health.pojo.TSetmealExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bwie.pojo.TSetmealExample" >
     select
     <if test="distinct" >
       distinct
@@ -98,13 +98,13 @@
     delete from t_setmeal
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.health.pojo.TSetmealExample" >
+  <delete id="deleteByExample" parameterType="com.bwie.pojo.TSetmealExample" >
     delete from t_setmeal
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.health.pojo.TSetmeal" >
+  <insert id="insert" parameterType="com.bwie.pojo.TSetmeal" >
     insert into t_setmeal (id, name, code, 
       helpCode, sex, age, price, 
       remark, attention, img
@@ -114,7 +114,7 @@
       #{remark,jdbcType=VARCHAR}, #{attention,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.health.pojo.TSetmeal" >
+  <insert id="insertSelective" parameterType="com.bwie.pojo.TSetmeal" >
     insert into t_setmeal
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -181,7 +181,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.health.pojo.TSetmealExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.bwie.pojo.TSetmealExample" resultType="java.lang.Integer" >
     select count(*) from t_setmeal
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -241,7 +241,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.health.pojo.TSetmeal" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.bwie.pojo.TSetmeal" >
     update t_setmeal
     <set >
       <if test="name != null" >
@@ -274,7 +274,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.health.pojo.TSetmeal" >
+  <update id="updateByPrimaryKey" parameterType="com.bwie.pojo.TSetmeal" >
     update t_setmeal
     set name = #{name,jdbcType=VARCHAR},
       code = #{code,jdbcType=VARCHAR},

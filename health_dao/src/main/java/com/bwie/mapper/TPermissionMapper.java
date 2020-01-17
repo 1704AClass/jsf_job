@@ -1,7 +1,7 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TPermission;
-import com.health.pojo.TPermissionExample;
+import com.bwie.pojo.TPermission;
+import com.bwie.pojo.TPermissionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

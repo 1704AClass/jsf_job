@@ -1,7 +1,8 @@
-package com.health.mapper;
+package com.bwie.mapper;
 
-import com.health.pojo.TCheckitem;
-import com.health.pojo.TCheckitemExample;
+import com.bwie.pojo.TCheckitem;
+import com.bwie.pojo.TCheckitemExample;
+import com.github.pagehelper.Page;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public interface TCheckitemMapper {
 
     int insertSelective(TCheckitem record);
 
-    List<TCheckitem> selectByExample(TCheckitemExample example);
+    Page<TCheckitem> selectByExample(String queryString);
 
     TCheckitem selectByPrimaryKey(Integer id);
 
@@ -33,4 +34,5 @@ public interface TCheckitemMapper {
 
     @Select(value="select count(*) from t_checkgroup_checkitem where checkitem_id = #{checkitem_id}")
 	long findCountByCheckItemId(Integer id);
+
 }
