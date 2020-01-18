@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface TCheckgroupMapper {
-    int countByExample(TCheckgroupExample example);
+	int countByExample(TCheckgroupExample example);
 
     int deleteByExample(TCheckgroupExample example);
 
@@ -27,6 +27,4 @@ public interface TCheckgroupMapper {
     int updateByPrimaryKeySelective(TCheckgroup record);
 
     int updateByPrimaryKey(TCheckgroup record);
-
-	List<Integer> findCheckItemIdsByCheckGroup(Integer id);
 }

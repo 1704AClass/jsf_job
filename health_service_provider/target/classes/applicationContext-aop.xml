@@ -22,10 +22,9 @@
 	
 
 	<dubbo:protocol name="dubbo" port="20884"></dubbo:protocol>
-	<dubbo:application name="brand_service"/>
-	<dubbo:registry address="zookeeper://localhost:2181"/>
+	<dubbo:application name="health_service_provider"/>
+	<dubbo:registry address="zookeeper://123.57.66.47:2181"/>
 	<dubbo:annotation package="com.bwie.service" />
-	
 	
 	<!-- 阿里 druid数据库连接池 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
@@ -41,7 +40,6 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
 	<!-- 定义事务策略 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>

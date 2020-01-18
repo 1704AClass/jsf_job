@@ -22,8 +22,8 @@
 	
 
 	<dubbo:protocol name="dubbo" port="20884"></dubbo:protocol>
-	<dubbo:application name="brand_service"/>
-	<dubbo:registry address="zookeeper://localhost:2181"/>
+	<dubbo:application name="health_service_provider"/>
+	<dubbo:registry address="zookeeper://123.57.66.47:2181"/>
 	<dubbo:annotation package="com.bwie.service" />
 	
 	

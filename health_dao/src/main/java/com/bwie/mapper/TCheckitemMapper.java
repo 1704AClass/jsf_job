@@ -35,4 +35,6 @@ public interface TCheckitemMapper {
     @Select(value="select count(*) from t_checkgroup_checkitem where checkitem_id = #{checkitem_id}")
 	long findCountByCheckItemId(Integer id);
 
+	List<TCheckitem> findByList();
+
 }
