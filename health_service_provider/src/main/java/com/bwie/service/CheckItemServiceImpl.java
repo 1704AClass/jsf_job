@@ -15,6 +15,8 @@ import com.bwie.entity.PageResult;
 import com.bwie.mapper.TCheckgroupMapper;
 import com.bwie.mapper.TCheckitemMapper;
 import com.bwie.pojo.TCheckitem;
+import com.bwie.pojo.TCheckitemExample;
+import com.bwie.pojo.TCheckitemExample.Criteria;
 import com.bwie.service.CheckItemService;
 @Service
 public class CheckItemServiceImpl implements CheckItemService {
@@ -29,19 +31,6 @@ public class CheckItemServiceImpl implements CheckItemService {
 		
 		return checkitemMapper.findByList();
 	}
-
-	/*@Override
-	public PageResult findPage(int page, int size, String queryString) {
-		// TODO Auto-generated method stub
-		TCheckitemExample example = new TCheckitemExample();
-		Criteria criteria = example.createCriteria();
-		if(queryString!=null && !"".equals(queryString)){
-			criteria.andNameLike("%"+queryString+"%");
-		}
-		PageHelper.startPage(page, size);
-		PageInfo<TCheckitem> info = new PageInfo<TCheckitem>(checkitemMapper.selectByExample(example));
-		return new PageResult(info.getTotal(), info.getList());
-	}*/
 
 	@Override
 	public void add(TCheckitem checkitem) {
@@ -76,7 +65,21 @@ public class CheckItemServiceImpl implements CheckItemService {
 	@Override
 	public PageResult findPage(Integer currentPage, Integer pageSize, String queryString) {
 		// TODO Auto-generated method stub
-		return null;
+		PageHelper.startPage(currentPage, pageSize);
+		Page<TCheckitem> page = checkitemMapper.selectByExample(queryString);
+		return new PageResult(page.getTotal(), page.getResult());
 	}
+	/*@Override
+	public PageResult findPage(int page, int size, String queryString) {
+		// TODO Auto-generated method stub
+		TCheckitemExample example = new TCheckitemExample();
+		Criteria criteria = example.createCriteria();
+		if(queryString!=null && !"".equals(queryString)){
+			criteria.andNameLike("%"+queryString+"%");
+		}
+		PageHelper.startPage(page, size);
+		PageInfo<TCheckitem> info = new PageInfo<TCheckitem>(checkitemMapper.selectByExample(example));
+		return new PageResult(info.getTotal(), info.getList());
+	}*/
 	
 }

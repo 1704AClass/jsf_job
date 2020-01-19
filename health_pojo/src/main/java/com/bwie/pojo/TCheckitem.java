@@ -97,4 +97,11 @@ public class TCheckitem implements Serializable{
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
     }
+
+	@Override
+	public String toString() {
+		return "TCheckitem [id=" + id + ", code=" + code + ", name=" + name + ", sex=" + sex + ", age=" + age
+				+ ", price=" + price + ", type=" + type + ", attention=" + attention + ", remark=" + remark + "]";
+	}
+    
 }
