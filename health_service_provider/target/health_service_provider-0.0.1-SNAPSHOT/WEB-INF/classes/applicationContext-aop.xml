@@ -26,7 +26,6 @@
 	<dubbo:registry address="zookeeper://123.57.66.47:2181"/>
 	<dubbo:annotation package="com.bwie.service" />
 	
-	
 	<!-- 阿里 druid数据库连接池 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
 		<!-- 数据库基本信息配置 -->
@@ -41,7 +40,6 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
 	<!-- 定义事务策略 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -55,14 +53,14 @@
 		</tx:attributes>
 	</tx:advice>
 
-	<aop:config>
-		<!--pointcut元素定义一个切入点，execution中的第一个星号 用以匹配方法的返回类型，
+<!-- 	<aop:config>
+		pointcut元素定义一个切入点，execution中的第一个星号 用以匹配方法的返回类型，
 			这里星号表明匹配所有返回类型。 com.abc.dao.*.*(..)表明匹配com.sso.service包下的所有类的所有 
-			方法 -->
+			方法
 		<aop:pointcut id="myPointcut" expression="execution(* com.bwie.service.*.*(..))" />
-		<!--将定义好的事务处理策略应用到上述的切入点 -->
+		将定义好的事务处理策略应用到上述的切入点
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut" />
-	</aop:config>
+	</aop:config> -->
 	
 	
 	

@@ -252,6 +252,9 @@
             methods: {
                 //文件上传成功后的钩子，response为服务端返回的值，file为当前上传的文件封装成的js对象
                 handleAvatarSuccess(response, file) {
+                	console.log(response);
+                	this.imageUrl = response;
+                	this.formData.img = response;
                 },
                 //上传图片之前执行
                 beforeAvatarUpload(file) {
@@ -267,18 +270,52 @@
                 },
                 //添加
                 handleAdd () {
+                	axios.post("/setmeal/add.do?checkgroupIds="+this.checkgroupIds,this.formData).then((req)=>{
+                		this.dialogFormVisible = false;
+                		if(req.data.flag){
+                			this.findPage();
+                		}else{
+                			console.log("新增失败error");
+                		}
+                	})
                 },
                 //分页查询
                 findPage() {
+                	var param = {
+                			currentPage:this.pagination.currentPage,//页码
+                			pageSize:this.pagination.pageSize,//每页显示记录数
+                			queryString:this.pagination.queryString//查询条件
+                	};
+                	axios.post("/setmeal/findPage.do",param).then((req)=>{
+                		console.log(req);
+                		this.dataList = req.data.rows;
+                		this.pagination.total = req.data.total;
+                	});
                 },
                 // 重置表单
                 resetForm() {
+                	this.formData = {};
+                	this.activeName = 'first';
+                	this.checkgroupIds = [];
+                	this.imageUrl = null;
                 },
                 // 弹出添加窗口
                 handleCreate() {
+                	this.dialogFromVisible = true;
+                	this.resetForm();
+                	axios.get("/checkgroup/findAll.do").then((req)=>{
+                		if(req.data.flag){
+                			this.tableData = req.data.data;
+                		}else{
+                			console.log("error获取数据错误");
+                		}
+                	})
                 },
                 //切换页码
                 handleCurrentChange(currentPage) {
+                	//currentPage为切换后的页码
+                	this.pagination.currentPage = currentPage;
+                	this.findPage();
                 }
             }
         })

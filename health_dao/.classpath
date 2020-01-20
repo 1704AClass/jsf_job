@@ -43,16 +43,6 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/repository-dobor/com/alibaba/dubbo/2.6.0/dubbo-2.6.0.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.archivename" value="dubbo-2.6.0.jar"/>
-			<attribute name="maven.groupId" value="com.alibaba"/>
-			<attribute name="maven.artifactId" value="dubbo"/>
-			<attribute name="maven.version" value="2.6.0"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="D:/repository-dobor/com/github/pagehelper/pagehelper/4.1.4/pagehelper-4.1.4.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
