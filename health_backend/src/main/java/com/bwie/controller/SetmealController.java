@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.bwie.entity.AliyunOSSClientUtils;
 import com.bwie.entity.PageResult;
 import com.bwie.entity.QueryPageBean;
 import com.bwie.entity.Result;
@@ -25,13 +26,13 @@ public class SetmealController {
 	
 
 	//文件上传
-	/*@RequestMapping("/upload")
+	@RequestMapping("/upload")
 	public String upload(MultipartFile imgFile) throws Exception{
 		AliyunOSSClientUtils ali = new AliyunOSSClientUtils();
 		String img2Oss = ali.uploadImg2Oss(imgFile);
 		String imgUrl = ali.getImgUrl(img2Oss);
 		return imgUrl;
-	}*/
+	}
 	
 	@RequestMapping("/add")
 	public Result add(@RequestBody TSetmeal setmeal,Integer[] checkgroupIds){

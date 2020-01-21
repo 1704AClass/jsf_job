@@ -1,4 +1,4 @@
-/*package com.bwie.entity;
+package com.bwie.entity;
 
 import java.io.*;
 import java.net.URL;
@@ -31,26 +31,26 @@ public class AliyunOSSClientUtils {
 		ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 	}
 
-	*//**
+	/**
 	 * 初始化
-	 *//*
+	 */
 	public void init() {
 		ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 	}
 
-	*//**
+	/**
 	 * 销毁
-	 *//*
+	 */
 	public void destory() {
 		ossClient.shutdown();
 	}
 
-	*//**
+	/**
 	 * 上传图片
 	 *
 	 * @param url
 	 * @throws Exception
-	 *//*
+	 */
 	private void uploadImg2Oss(String url) throws Exception {
 		File fileOnServer = new File(url);
 		FileInputStream fin;
@@ -81,12 +81,12 @@ public class AliyunOSSClientUtils {
 		}
 	}
 
-	*//**
+	/**
 	 * 获得图片路径
 	 *
 	 * @param fileUrl
 	 * @return
-	 *//*
+	 */
 	public String getImgUrl(String fileUrl) {
 		if (!StringUtils.isEmpty(fileUrl)) {
 			String[] split = fileUrl.split("/");
@@ -95,7 +95,7 @@ public class AliyunOSSClientUtils {
 		return null;
 	}
 
-	*//**
+	/**
 	 * 上传到OSS服务器 如果同名文件会覆盖服务器上的
 	 *
 	 * @param instream
@@ -103,7 +103,7 @@ public class AliyunOSSClientUtils {
 	 * @param fileName
 	 *            文件名称 包括后缀名
 	 * @return 出错返回"" ,唯一MD5数字签名
-	 *//*
+	 */
 	private String uploadFile2OSS(InputStream instream, String fileName) {
 		String ret = "";
 		try {
@@ -131,13 +131,13 @@ public class AliyunOSSClientUtils {
 		return ret;
 	}
 
-	*//**
+	/**
 	 * Description: 判断OSS服务文件上传时文件的contentType
 	 *
 	 * @param FilenameExtension
 	 *            文件后缀
 	 * @return String
-	 *//*
+	 */
 	private static String getcontentType(String FilenameExtension) {
 		if (FilenameExtension.equalsIgnoreCase(".bmp")) {
 			return "image/bmp";
@@ -170,12 +170,12 @@ public class AliyunOSSClientUtils {
 		return "image/jpeg";
 	}
 
-	*//**
+	/**
 	 * 获得url链接
 	 *
 	 * @param key
 	 * @return
-	 *//*
+	 */
 	public String getUrl(String key) {
 		// 设置URL过期时间为10年 3600l* 1000*24*365*10
 		Date expiration = new Date(new Date().getTime() + 3600l * 1000 * 24 * 365 * 10);
@@ -187,4 +187,3 @@ public class AliyunOSSClientUtils {
 		return null;
 	}
 }
-*/

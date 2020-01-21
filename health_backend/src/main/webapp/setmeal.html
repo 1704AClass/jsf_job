@@ -301,7 +301,8 @@
                 },
                 // 弹出添加窗口
                 handleCreate() {
-                	this.dialogFromVisible = true;
+                	this.resetForm();
+                	this.dialogFormVisible = true;
                 	this.resetForm();
                 	axios.get("/checkgroup/findAll.do").then((req)=>{
                 		if(req.data.flag){
